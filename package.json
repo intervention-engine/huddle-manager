@@ -1,0 +1,30 @@
+{
+  "name": "huddle-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "immutable": "^3.7.6",
+    "isomorphic-fetch": "^2.2.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "redux": "^3.0.5"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-eslint": "^1.1.1",
+    "gulp-open": "^1.0.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
