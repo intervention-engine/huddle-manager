@@ -3,6 +3,7 @@ var connect = require('gulp-connect'); // runs a local dev server
 var open = require('gulp-open'); // opens a URL in a web browser
 var browserify = require('browserify'); // bundles JS
 var reactify = require('reactify'); // transforms JSX into JS
+var babelify = require('babelify'); // transforms JSX into JS
 var source = require('vinyl-source-stream'); // uses conventional text streams with gulp
 var concat = require('gulp-concat'); // concatenates files
 var lint = require('gulp-eslint'); // lints JS files, including JSX
@@ -42,13 +43,18 @@ gulp.task('html', function() {
 
 // bundles js files, moves them to dist folder, and reloads
 gulp.task('js', function() {
-  browserify(config.paths.mainJs)
-    .transform(reactify) // transforms JSX to JS
-    .bundle() // combines all JS files into one
+  browserify({
+    entries: config.paths.mainJs,
+    extensions: ['.js'],
+    debug: true
+  })
+    .transform(babelify, {presets: ["es2015", "react"]}) // transforms JSX to JS
+    .bundle()
     .on('error', console.error.bind(console)) // reports errors
     .pipe(source('bundle.js')) // names bundle
     .pipe(gulp.dest(config.paths.dist + '/scripts')) // destination
     .pipe(connect.reload()); // reloads browser
+
 });
 
 // bundles css files, moves them to dist folder

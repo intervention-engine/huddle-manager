@@ -1,1 +1,2 @@
-console.log("Hello")
+import React from 'react';
+console.log("React foo");
