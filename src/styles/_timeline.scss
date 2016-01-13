@@ -1,0 +1,96 @@
+// ------------------------- TIMELINE -------------------------------------- //
+.timeline {
+  margin: 20px auto;
+  @include respond-to(desktop) { margin: 20px 0 0 80px; }
+  @include respond-to(tablet) { margin: 20px 0 0 80px; }
+
+  .timeline-icon-search {
+
+    .timeline-icon {
+      margin-left: -15px;
+      font-size: 48px;
+      color: $brand-primary;
+    }
+  }
+
+  // ----------------------- TIMELINE EVENTS ------------------------------- //
+
+  .timeline-events {
+    margin: -4px 0 0 -25px;
+    overflow-y: scroll;
+    width: 500px;
+
+    .timeline-line {
+      display: block;
+      position: absolute;
+      margin-left: 25px;
+      width: 8px;
+      height: 100%;
+      background-color: $body-bg;
+    }
+
+    .timeline-event {
+      position: relative;
+      left: 20px;
+      min-height: 100px;
+      width: 380px;
+      border: 8px solid $body-bg;
+      margin: 10px 0 10px 70px;
+      padding: 10px;
+
+      .pointer-bottom {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: -25px;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid $body-bg;
+      }
+
+      .pointer-top {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: -15px;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid #fff;
+      }
+
+      .timeline-event-icon {
+        display: block;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        top: 5px;
+        left: -91px;
+        border-radius: 50%;
+        border: 8px solid $body-bg;
+        background-color: #fff;
+
+        i {
+          font-size: 25px;
+          line-height: 28px;
+          margin-left: 5px;
+        }
+      }
+
+      .timeline-event-text {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .timeline-event-start-date {
+        font-size: 16px;
+        color: lighten($brand-secondary, 40%);
+      }
+
+      .timeline-event-type-icon {
+        color: $brand-secondary;
+        font-size: 24px;
+        padding-left: 20px;
+      }
+    }
+  }
+}

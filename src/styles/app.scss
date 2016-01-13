@@ -1,0 +1,22 @@
+@import "variables";
+
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* ------------------------- IMPORT CUSTOM SCSS ---------------------------- */
+@import "application";
+@import "filters";
+@import "drag-and-drop";
+@import "panes";
+@import "forms";
+@import "panels";
+@import "login";
+@import "patients";
+@import "timeline";
+@import "tooltip";
+@import "login-register";
+@import "register";
+@import "select-fx";
+@import "search";
+@import "bootstrap";
+@import "charts";
+@import "interventions";

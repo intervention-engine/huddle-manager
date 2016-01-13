@@ -1,0 +1,136 @@
+/* -------------------------------- LIST -------------------------------- */
+
+.filterList {
+  list-style-type: none;
+}
+
+/* -------------------------------- COUNTS -------------------------------- */
+
+.filter-counts {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.3em;
+  color: $brand-secondary;
+
+  .count {
+    min-width: 150px;
+
+    .count-value {
+      display: inline-block;
+      min-width: 160px;
+      font-size: 1.7em;
+      font-weight: 400;
+      background-color: $body-bg;
+      border-radius: 25px;
+    }
+  }
+}
+
+.time-selection {
+  font-size: 0.9em;
+  line-height: 25px;
+
+  .time-period {
+    font-size: 2.2em;
+    color: $brand-primary;
+  }
+}
+
+/* -------------------------------- FILTER TYPE -------------------------------- */
+
+.filter-types {
+
+  .filter-type,
+  .filter-type-disabled {
+    height: 60px;
+    line-height: 60px;
+    font-size: 2em;
+    margin: 15px;
+    padding: 0;
+    background-color: $body-bg;
+    cursor: move;
+
+    &:hover {
+      background-color: $brand-primary;
+      color: #fff;
+    }
+
+    .filter-type-icon {
+      display: inline-block;
+      font-size: 1.3em;
+      margin: 0;
+      width: 50px;
+      text-align: center;
+      background-color: $brand-primary;
+      color: #fff;
+    }
+
+    .filter-type-chevron {
+      float: right;
+      line-height: inherit;
+      padding-right: 5px;
+      font-size: 0.8em;
+    }
+  }
+
+  .filter-type-disabled {
+    cursor: default;
+    &:hover {
+      background-color: $body-bg;
+      color: inherit;
+    }
+  }
+}
+
+/* -------------------------------- FILTER DETAILS -------------------------------- */
+
+.filter-details {
+  padding: 15px !important;
+
+  .drop-area {
+    min-height: 400px;
+  }
+
+  .form-group {
+    padding: 10px;
+  }
+
+  .save-new-filter {
+    float: right;
+    padding: 10px 0;
+
+    .pane-input input {
+      padding-left: 10px;
+      height: 45px;
+      width: 325px;
+      font-size: 20px;
+    }
+
+    button {
+      margin: 0 1px 5px 10px;
+    }
+  }
+}
+
+.selected-filter-details {
+  margin-left: 35px;
+  line-height: 40px;
+}
+
+.add-new-filter {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 10px;
+}
+
+/* -------------------------------- FILTER ITEM -------------------------------- */
+
+.filter-item {
+  .form-group {
+    margin: 0 0 0 -15px;
+  }
+
+  label {
+    font-weight: 200;
+  }
+}

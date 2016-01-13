@@ -1,0 +1,290 @@
+.patients {
+
+  // ----------------------- PATIENT LIST ---------------------------------- //
+
+  .patient-populations-list {
+    font-weight: 400;
+
+    @include respond-to(tablet) {
+      position: absolute;
+      left: 10px;
+      padding: 0;
+    }
+
+    .patient-list {
+      .patients-striped {
+        > .ember-view:nth-child(odd) {
+          background-color: $table-bg-accent;
+        }
+
+        > .ember-view:first-child {
+          border-top: 1px solid $body-bg;
+        }
+
+        .patient {
+          position: relative;
+          margin: 0;
+          padding: 15px 0 15px 15px;
+          border-bottom: 1px solid $body-bg;
+          font-size: 16px;
+          min-height: 80px;
+
+          &:hover, &.active {
+            background-color: $brand-primary;
+
+            .patient-info .patient-name,
+            .patient-info .patient-age-gender,
+            .patient-info .patient-age-gender i {
+              color: $body-bg-inverse;
+            }
+
+            .patient-info .patient-risk-bar-container .patient-risk-bar {
+              color: $brand-primary;
+              background-color: $body-bg-inverse;
+            }
+          }
+
+          .patient-info {
+            position: relative;
+            cursor: pointer;
+
+            .patient-name {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: $brand-primary;
+
+              @include respond-to(non-handheld) { font-size: 18px; }
+              @include respond-to(tablet) { font-size: 16px; }
+              @include respond-to(mobile) { font-size: 20px; }
+
+              @include respond-to(desktop-wide) { max-width: 175px; }
+              @include respond-to(desktop) { max-width: 120px; }
+              @include respond-to(tablet) { max-width: 80px; }
+
+              .badge {
+                display: inline-block;
+                background-color: $brand-alert;
+                width: 15px;
+                height: 15px;
+                padding: 0 2px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+              }
+            }
+
+            .patient-age-gender {
+              line-height: 0;
+              color: lighten($brand-secondary, 28%);
+
+              @include respond-to(non-handheld) { font-size: 14px; }
+              @include respond-to(tablet) { font-size: 10px; }
+              @include respond-to(mobile) { font-size: 16px; }
+
+              i {
+                color: lighten($brand-secondary, 50%);
+
+                @include respond-to(non-handheld) { font-size: 20px; }
+                @include respond-to(tablet) { font-size: 16px; }
+                @include respond-to(mobile) { font-size: 20px; }
+              }
+
+              .patient-age {
+                margin-right: 15px;
+              }
+
+              .patient-gender i {
+                @include respond-to(non-handheld) { font-size: 18px; }
+                @include respond-to(tablet) { font-size: 14px; }
+                @include respond-to(mobile) { font-size: 18px; }
+              }
+            }
+
+            .patient-risk-bar-container {
+              position: absolute;
+              top: 38%;
+              right: -2px;
+              height: 15px;
+
+              @include respond-to(desktop-wide) { width: 150px; }
+              @include respond-to(desktop) { width: 100px; }
+              @include respond-to(tablet) { width: 85px; }
+              @include respond-to(mobile) { width: 250px; }
+
+              .patient-risk-bar {
+                float: right;
+                height: 15px;
+                background-color: $brand-primary;
+                font-size: 12px;
+                line-height: 12px;
+                color: #fff;
+                padding: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .select-patient {
+      min-height: 500px;
+    }
+  }
+
+  // ----------------------- PATIENT RESULTS ------------------------------- //
+
+  .patient-results {
+    @include respond-to(tablet) {
+      position: absolute;
+      right: -5px;
+    }
+
+    .patient-panel {
+      min-height: 800px;
+
+      .add-intervention-icon {
+        font-size: 1.5em;
+        color: $brand-primary;
+        cursor: pointer;
+
+        &:hover {
+          color: darken($brand-primary, 10%);
+        }
+      }
+    }
+
+    // --------------------- PATIENT SUMMARY ------------------------------- //
+
+    .patient-summary {
+      .patient-photo {
+        font-size: 130px;
+        color: $body-bg;
+        text-align: center;
+      }
+
+      .patient-risk-info-chart {
+        padding: 0;
+
+        .patient-risk-info {
+          position: relative;
+          padding: 0;
+
+          .patient-risk {
+            position: absolute;
+            top: 0;
+            left: -35px;
+            font-size: 38px;
+            line-height: 55px;
+            border: 5px solid $brand-secondary;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+          }
+
+          .patient-info {
+            // margin-left: 50px;
+            text-align: left;
+            padding: 10px 20px 0 0;
+
+            .patient-name {
+              color: $brand-secondary;
+              font-size: 24px;
+            }
+
+            .patient-age-gender-location {
+              font-size: 14px;
+              color: lighten($brand-secondary, 20%);
+
+              i {
+                color: lighten($brand-secondary, 40%);
+              }
+
+              .patient-age,
+              .patient-gender {
+                margin-right: 20px;
+              }
+            }
+
+            .patient-location {
+              font-size: 14px;
+              color: lighten($brand-secondary, 20%);
+            }
+          }
+        }
+
+        .patient-risk-chart {
+          padding: 0;
+        }
+      }
+    }
+
+    // ------------------------- PATIENT STATS --------------------------------- //
+
+    .patient-stats {
+      padding: 0;
+    }
+
+    // ------------------------- PATIENT INTERVENTIONS ------------------------- //
+
+    .completed-interventions {
+      .completed-interventions-value {
+        float: right;
+        margin-right: 20px;
+        line-height: 50px;
+        font-size: 64px;
+        text-align: left;
+      }
+
+      .completed-interventions-stars {
+        float: left;
+        font-size: 20px;
+        text-align: right;
+      }
+
+      .completed-interventions-text {
+        font-size: 18px;
+
+        @include respond-to(non-handheld) { text-align: right; }
+        @include respond-to(handheld) { text-align: center; }
+      }
+    }
+
+    // ------------------------- PATIENT CATEGORIES ---------------------------- //
+
+    .aster-plot {
+      margin: 0 auto;
+      padding: 20px;
+      @include respond-to(desktop) { padding: 20px 5px; }
+      @include respond-to(tablet) { width: 400px; }
+
+      .category {
+        cursor: pointer;
+      }
+    }
+
+    .category-details {
+      font-size: 18px;
+      @include respond-to(desktop-wide) { width: 450px; }
+      @include respond-to(desktop) { margin-top: 80px; }
+      @include respond-to(tablet) {
+        width: 400px;
+        margin: 0 auto 30px auto;
+      }
+
+      .category-name {
+        font-size: 1.7em;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .category-stat-value {
+        font-weight: 500;
+      }
+
+      .sub-text {
+        font-size: 0.9em;
+        text-align: center;
+      }
+    }
+  }
+}

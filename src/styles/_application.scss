@@ -1,0 +1,113 @@
+/* -------------------------------- DOM -------------------------------- */
+
+body {
+   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+}
+
+h1 {
+  font-size: 4.8em;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 2.2em;
+}
+
+ul {
+  text-decoration: none;
+}
+
+/* -------------------------------- LOGO -------------------------------- */
+
+.logo {
+  margin-top: -20px;
+}
+
+/* -------------------------------- NAV -------------------------------- */
+
+.nav {
+  padding-right: 44px;
+
+  a {
+    min-width: 150px;
+    text-align: center;
+  }
+}
+
+/* -------------------------------- BUTTONS -------------------------------- */
+
+.btn-circle {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-width: 5px;
+  background-color: #fff;
+  border-color: $body-bg;
+
+  &.btn-active {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: #fff;
+  }
+}
+
+.btn-primary {
+  width: 200px;
+  height: 45px;
+  background-color: $brand-primary;
+  border-color: darker($brand-primary, 10%);
+  border-radius: 0;
+  font-size: 20px;
+}
+
+/* -------------------------------- OTHER -------------------------------- */
+
+.sub-text {
+  color: lighten($brand-secondary, 40%);
+  font-style: italic;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+
+svg {
+  fill:$brand-primary;
+  shape-rendering: geometricPrecision;
+
+  .event{
+    stroke: white;
+  }
+}
+
+.active{
+  stroke: black;
+  stroke-width: 4px;
+}
+
+.background {
+  fill: $gray-lighter;
+}
+
+.svg-risk {
+  .bar {
+    background-color: $brand-primary;
+  }
+}
+
+.row {
+  margin: 0;
+}
+
+.col-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-centered {
+  text-align: center;
+
+  .pagination > li > a {
+    border-radius: 0;
+  }
+}

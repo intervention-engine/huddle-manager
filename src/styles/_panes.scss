@@ -1,0 +1,80 @@
+/* -------------------------------- PANES -------------------------------- */
+
+.pane {
+  margin: 0;
+  padding: 0;
+
+  .pane-icon {
+    position: relative;
+    font-size: 3.25em;
+    color: $brand-primary;
+    border: 8px solid $body-bg;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 0 15px 0 0;
+    text-align: center;
+  }
+
+  .pane-content {
+    float: right;
+    padding: 0;
+
+    @include respond-to(desktop-wide) { width: 88%; }
+    @include respond-to(desktop) { width: 84%; }
+    @include respond-to(mobile) { width: 74%; }
+
+    .pane-outline {
+      margin-bottom: 10px;
+      border: 8px solid $body-bg;
+      min-height: 100px;
+
+      .pointer-bottom {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: -18px;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid $body-bg;
+      }
+
+      .pointer-top {
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: -6px;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid #fff;
+      }
+
+      .pane-close {
+        padding: 5px 8px;
+      }
+    }
+  }
+}
+
+.pane-inner-label {
+  padding: 0 5px;
+}
+
+.pane-input input {
+  padding: 0;
+  border: 1px solid lighten($brand-secondary, 20%);
+
+  &.age {
+    width: 40px;
+    text-align: center;
+  }
+
+  &.condition,
+  &.encounter {
+    width: 245px;
+    padding-left: 10px;
+  }
+}

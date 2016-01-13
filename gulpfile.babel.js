@@ -7,6 +7,8 @@ var babelify = require('babelify'); // transforms JSX into JS
 var source = require('vinyl-source-stream'); // uses conventional text streams with gulp
 var concat = require('gulp-concat'); // concatenates files
 var lint = require('gulp-eslint'); // lints JS files, including JSX
+var sass = require('gulp-sass');
+
 
 var config = {
   port: 9005,
@@ -15,8 +17,12 @@ var config = {
     html: './src/*.html',
     js: './src/**/*.js',
     css: [
+      './src/**/*.css',
       './node_modules/bootstrap/dist/css/bootstrap.min.css',
       './node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+    ],
+    sass:[
+      './src/styles/*.scss'
     ],
     images: './src/images/*',
     dist: './dist',
@@ -57,6 +63,13 @@ gulp.task('js', function() {
 
 });
 
+gulp.task('sass', function () {
+  return gulp.src(config.paths.sass)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest(config.paths.dist + '/css'))
+});
+
 // bundles css files, moves them to dist folder
 gulp.task('css', function() {
   gulp.src(config.paths.css)
@@ -94,4 +107,4 @@ gulp.task('watch', function() {
 });
 
 // runs tasks by typing 'npm-exec gulp' in the command line
-gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'sass', 'images', 'lint', 'open', 'watch']);
