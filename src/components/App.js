@@ -21,18 +21,18 @@ export const App = ({}) => (
         </div>
         </div>
 
-        <div class="panel-body patient-list">
-          <div class="search search-panel">
-            <div class="input-group">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+        <div className="panel-body patient-list">
+          <div className="search search-panel">
+            <div className="input-group">
+              <span className="input-group-btn">
+                <button className="btn btn-default" type="button"><i className="fa fa-search"></i></button>
               </span>
               <input type="text" className="form-control" placeholder="Search patients..." />
             </div>
           </div>
 
-          <div class="collapse in" id="choosePatient">
-            <div class="patients-striped">
+          <div className="collapse in" id="choosePatient">
+            <div className="patients-striped">
               Patient Badges Here
             </div>
           </div>
