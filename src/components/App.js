@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-export const App = ({}) => (
+
+export const App = ({store}) => (
   <div className="container patients">
     <div className="title-panel">
       <span className="title-text">Patients</span>
@@ -14,7 +15,7 @@ export const App = ({}) => (
           <div className="collapse-panel-title">
             <a data-toggle="collapse" href="#choosePatient" aria-expanded="true" aria-controls="collapseOne">
               Choose Patient
-              <span className="badge count">5</span>
+              <span className="badge count">{JSON.stringify(store)}</span>
               <i className="fa fa-chevron-down pull-right"></i>
             </a>
           </div>
