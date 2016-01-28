@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 
 
-let ReduxApp = (props) => (
+let ReduxApp = ({patientList}) => (
   <div className="container patients">
     <div className="title-panel">
       <span className="title-text">Patients</span>
@@ -17,7 +17,7 @@ let ReduxApp = (props) => (
           <div className="collapse-panel-title">
             <a data-toggle="collapse" href="#choosePatient" aria-expanded="true" aria-controls="collapseOne">
               Choose Patient
-              <span className="badge count">{JSON.stringify(props)}</span>
+              <span className="badge count">{(patientList.toJSON().patients).length}</span>
               <i className="fa fa-chevron-down pull-right"></i>
             </a>
           </div>

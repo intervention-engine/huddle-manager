@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
 
-export const PatientListReducer = (state = Immutable.Map({}) , action) => {
+export const PatientListReducer = (state = Immutable.Map({patients: []}) , action) => {
   console.log(action.type);
   switch (action.type) {
     case "PATIENT_LIST_LOAD_SUCCESS":
