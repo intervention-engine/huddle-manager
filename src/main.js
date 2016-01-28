@@ -37,7 +37,7 @@ window.store = store
 reduxRouterMiddleware.listenForReplays(store)
 
 
-import {App} from './components/App';
+import {PatientList} from './components/PatientList';
 import {Foo} from './components/Foo';
 
 
@@ -47,7 +47,7 @@ import {Foo} from './components/Foo';
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route path="/" component={PatientList} />
       <Route path="/patient/:patient_id" component={Foo} />
     </Router>
   </Provider>,

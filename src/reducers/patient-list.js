@@ -1,13 +1,13 @@
 import Immutable from 'immutable'
 
-export const PatientListReducer = (state = Immutable.Map({patients: []}) , action) => {
-  console.log(action.type);
+export const PatientListReducer = (state = Immutable.Map({patients: Immutable.List([])}) , action) => {
   switch (action.type) {
     case "PATIENT_LIST_LOAD_SUCCESS":
-        let patients = action.data.entry.map(function(el){return el.resource})
-        return state.set('patients', patients)
+        let newPats = action.data.entry.map(function(el){return el.resource})
+        return state.update('patients', currentPats => currentPats.mergeDeep(...newPats))
       break;
     default:
+      console.log(`${action.type} was unexpected`);
       return state
   }
 }

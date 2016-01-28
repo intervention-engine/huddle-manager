@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 
 
-let ReduxApp = ({patientList}) => (
+let PatientListTemplate = ({patientList}) => (
   <div className="container patients">
     <div className="title-panel">
       <span className="title-text">Patients</span>
@@ -17,7 +17,7 @@ let ReduxApp = ({patientList}) => (
           <div className="collapse-panel-title">
             <a data-toggle="collapse" href="#choosePatient" aria-expanded="true" aria-controls="collapseOne">
               Choose Patient
-              <span className="badge count">{(patientList.toJSON().patients).length}</span>
+              <span className="badge count">{(patientList.patients).length}</span>
               <i className="fa fa-chevron-down pull-right"></i>
             </a>
           </div>
@@ -46,4 +46,17 @@ let ReduxApp = ({patientList}) => (
   </div>
 );
 
-export const App = connect(state => state)(ReduxApp)
+
+// This is the function that'll slice down the state to just the parts we care about.
+// Example, since this is the patientList component we probably only care about
+// what is in the patientList section of the state. If this changes, just return more
+
+// And the toJS call is to pull it out of ImmutableJS land.
+let mapStateFunc = (state) => {
+  return {
+    patientList: state.patientList.toJS()
+  }
+}
+
+
+export const PatientList = connect(mapStateFunc)(PatientListTemplate)
