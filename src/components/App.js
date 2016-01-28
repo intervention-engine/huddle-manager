@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 
 
-export const App = ({store}) => (
+
+let ReduxApp = (props) => (
   <div className="container patients">
     <div className="title-panel">
       <span className="title-text">Patients</span>
@@ -15,7 +17,7 @@ export const App = ({store}) => (
           <div className="collapse-panel-title">
             <a data-toggle="collapse" href="#choosePatient" aria-expanded="true" aria-controls="collapseOne">
               Choose Patient
-              <span className="badge count">{JSON.stringify(store)}</span>
+              <span className="badge count">{JSON.stringify(props)}</span>
               <i className="fa fa-chevron-down pull-right"></i>
             </a>
           </div>
@@ -43,3 +45,5 @@ export const App = ({store}) => (
     </div>
   </div>
 );
+
+export const App = connect(state => state)(ReduxApp)

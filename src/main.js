@@ -33,15 +33,12 @@ const store = createStoreWithMiddleware(reducer)
 window.store = store
 
 
-
-
 // Required for replaying actions from devtools to work
 reduxRouterMiddleware.listenForReplays(store)
 
 
 import {App} from './components/App';
 import {Foo} from './components/Foo';
-
 
 
 
