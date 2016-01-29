@@ -4,7 +4,11 @@ export const PatientListReducer = (state = Immutable.Map({patients: Immutable.Li
   switch (action.type) {
     case "PATIENT_LIST_LOAD_SUCCESS":
         let newPats = action.data.entry.map(function(el){return el.resource})
-        return state.update('patients', currentPats => currentPats.mergeDeep(...newPats))
+        console.log(action.data.total);
+        return state.withMutations( (store) =>
+          store.update('patients', currentPats => currentPats.push(...newPats))
+        )
+
       break;
     default:
       console.log(`${action.type} was unexpected`);

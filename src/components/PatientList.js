@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 
+import {PatientBadge} from './patients/badge'
+
 
 
 let PatientListTemplate = ({patientList}) => (
@@ -36,7 +38,9 @@ let PatientListTemplate = ({patientList}) => (
 
           <div className="collapse in" id="choosePatient">
             <div className="patients-striped">
-              Patient Badges Here
+            {patientList.patients.map((patient, index) =>
+                <PatientBadge patient={patient} key={index} />
+              )}
             </div>
           </div>
         </div>

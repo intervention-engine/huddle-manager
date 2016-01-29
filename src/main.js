@@ -53,3 +53,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 )
+// Bootstrap data...
+
+store.dispatch({type:"PATIENT_LIST_LOAD", fhirResource:"http://fhirtest.uhn.ca/baseDstu2/Patient"})
